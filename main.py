@@ -12,15 +12,15 @@ from helpers.other_helpers import save_model, remove_code_wrappers, retrieve_KPI
 from helpers.mermaid_renderer import render_mermaid_to_png
 import pandas as pd
 import time
+from pathlib import Path
 
-
-api_key=""  #Your OpenAI API key here
+api_key="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"  #Your OpenAI API key here
 client = OpenAI(api_key=api_key)
-file_path_eventlog = r"/Users/thomas/Library/CloudStorage/OneDrive-ScaniaCV/workspace/1. Projects/Simulations using GenAI/Thomas/Case B - Thomas (revised)/workingtest.csv"
-file_path_machine = r"/Users/thomas/Library/CloudStorage/OneDrive-ScaniaCV/workspace/1. Projects/Simulations using GenAI/Thomas/Case B - Thomas (revised)/workingtest.csv"
-file_path_blueprintmodel_active = r"/Users/thomas/Library/CloudStorage/OneDrive-ScaniaCV/workspace/1. Projects/Simulations using GenAI/Thomas/Case B - Thomas (revised)/blueprints/blueprint active.py"
-file_path_blueprintmodel_util = r"/Users/thomas/Library/CloudStorage/OneDrive-ScaniaCV/workspace/1. Projects/Simulations using GenAI/Thomas/Case B - Thomas (revised)/blueprints/blueprint utilization.py"
-final_path = r"/Users/thomas/Library/CloudStorage/OneDrive-ScaniaCV/workspace/1. Projects/Simulations using GenAI/Thomas/Case B - Thomas (revised)/results_13"
+file_path_eventlog = Path("data/workingtest.csv")
+#file_path_machine = Path("data/workingtest.csv")
+#file_path_blueprintmodel_active = Path("blueprints/blueprint active.py")
+file_path_blueprintmodel_util = Path("blueprint/blueprint_util.py")
+final_path = Path("results")
 buffers_info_specific = "PostLoadingBuffer(Capacity = 2, processtime = 10), PostConveyorBuffer(Capacity = 2, processtime = 10), PostWashingBuffer(Capacity = 2, processtime = 10), PrePress1Buffer(Capacity = 3, processtime = 32), PrePress2Buffer(Capacity = 3, processtime = 32), " \
 "PostPress1&Press2Buffer(Capacity = 3, processtime = 32)"
 defect_info = "Defect rate = 0.089, defect sink = defect,initiated at Qualitystation"
@@ -36,15 +36,7 @@ def main() -> None:
     print(sequence_text)
 
     # read-in the blueprint
-    manual_bottleneck = input("Do you want to work with the utilization for bottleneck analysis (type 1) or the active period (type 2)? Enter 1 or 2 ").strip().lower()
-    if manual_bottleneck == '1':
-        with open(file_path_blueprintmodel_util, "r", encoding="utf-8") as f:
-            blueprint_code = f.read()
-    elif manual_bottleneck == '2':
-        with open(file_path_blueprintmodel_active, "r", encoding="utf-8") as f:
-            blueprint_code = f.read()
-    else:
-        raise IndexError
+    blueprint_code = open(file_path_blueprintmodel_util, "r", encoding="utf-8").read()
 
     # Build initial model
     builder = ModelBuilder(client)
@@ -115,7 +107,6 @@ def main() -> None:
         print(kpi_adapted_model) # Append each adapted model's KPIs to results
         results.append(kpi_adapted_model)
 
-    #print(results)
     # Evaluate all results
     evaluator = Evaluater(client)
     print(evaluator.evaluate(results))
