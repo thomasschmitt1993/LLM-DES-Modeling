@@ -14,7 +14,7 @@ import pandas as pd
 import time
 from pathlib import Path
 
-api_key="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"  #Your OpenAI API key here
+api_key=""  #Your OpenAI API key here
 client = OpenAI(api_key=api_key)
 file_path_eventlog = Path("data/workingtest.csv")
 #file_path_machine = Path("data/workingtest.csv")
