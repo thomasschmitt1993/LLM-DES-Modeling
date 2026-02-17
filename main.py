@@ -14,7 +14,11 @@ import pandas as pd
 import time
 from pathlib import Path
 
-api_key=""  #Your OpenAI API key here
+api_key = os.getenv("OPENAI_API_KEY")
+if not api_key:
+    raise RuntimeError(
+        "OPENAI_API_KEY is not set. Export it in your shell before running main.py."
+    )
 client = OpenAI(api_key=api_key)
 file_path_eventlog = Path("data/workingtest.csv")
 #file_path_machine = Path("data/workingtest.csv")

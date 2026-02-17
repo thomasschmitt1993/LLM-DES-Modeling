@@ -1,0 +1,46 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "LLM-DES-Modeling"
+type: software
+authors:
+  - family-names: "Schmitt"
+    given-names: "Thomas"
+  - family-names: "Gegenmantel"
+    given-names: "Nils"
+  - family-names: "Urenda Moris"
+    given-names: "Matías"
+  - family-names: "Mårtensson"
+    given-names: "Pär"
+  - family-names: "Amouzgar"
+    given-names: "Kaveh"
+repository-code: "https://github.com/thomasschmitt1993/LLM-DES-Modeling"
+license: "GPL-3.0-only"
+abstract: >
+  Code and resources for automating discrete-event simulation modeling
+  with large language models, including model generation, KPI evaluation,
+  and decision-support workflows.
+keywords:
+  - "discrete-event simulation"
+  - "generative artificial intelligence"
+  - "large language models"
+  - "simulation automation"
+  - "manufacturing system analysis"
+  - "decision support"
+version: "0.1.0"
+date-released: "2026-02-17"
+preferred-citation:
+  type: article
+  authors:
+    - family-names: "Schmitt"
+      given-names: "Thomas"
+    - family-names: "Gegenmantel"
+      given-names: "Nils"
+    - family-names: "Urenda Moris"
+      given-names: "Matías"
+    - family-names: "Mårtensson"
+      given-names: "Pär"
+    - family-names: "Amouzgar"
+      given-names: "Kaveh"
+  title: "LLM-Driven Discrete-Event Simulation: A Generative AI Framework for Automated Model Generation, Adaptation, and Evaluation in Manufacturing"
+  journal: "Journal of Manufacturing Systems"
+  year: 2026
