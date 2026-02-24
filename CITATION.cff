@@ -41,6 +41,12 @@ preferred-citation:
       given-names: "Pär"
     - family-names: "Amouzgar"
       given-names: "Kaveh"
-  title: "LLM-Driven Discrete-Event Simulation: A Generative AI Framework for Automated Model Generation, Adaptation, and Evaluation in Manufacturing"
+  title: "LLM-driven discrete-event simulation: A generative AI framework for automated model generation, adaptation, and evaluation in manufacturing"
   journal: "Journal of Manufacturing Systems"
+  publisher: "Elsevier"
+  volume: 85
+  pages: "642-661"
   year: 2026
+  issn: "0278-6125"
+  doi: "10.1016/j.jmsy.2026.02.015"
+  url: "https://www.sciencedirect.com/science/article/pii/S0278612526000427"
