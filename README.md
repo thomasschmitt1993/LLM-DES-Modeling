@@ -102,8 +102,8 @@ Dataset files in `data/` are licensed separately from code. See `DATA_LICENSE.md
 ## Citation
 
 If you use this repository in academic work, please cite:
-- the associated journal article (add DOI once available)
-- this code repository (add persistent URL/release tag)
+- the associated journal article: DOI `10.1016/j.jmsy.2026.02.015`
+- this code repository (persistent URL): `https://github.com/thomasschmitt1993/LLM-DES-Modeling`
 
 Machine-readable citation metadata is provided in `CITATION.cff`.
 
