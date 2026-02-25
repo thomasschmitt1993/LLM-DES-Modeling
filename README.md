@@ -6,7 +6,7 @@ Code and resources for automating discrete-event simulation (DES) modeling with 
 - KPI extraction and model comparison
 - bottleneck-informed adaptation workflows
 
-This repository accompanies an academic study prepared for the *Journal of Manufacturing Systems*.
+This repository accompanies a published study in the *Journal of Manufacturing Systems*.
 
 ## Repository structure
 
@@ -103,6 +103,7 @@ Dataset files in `data/` are licensed separately from code. See `DATA_LICENSE.md
 
 If you use this repository in academic work, please cite:
 - the associated journal article: DOI `10.1016/j.jmsy.2026.02.015`
+  URL: `https://www.sciencedirect.com/science/article/pii/S0278612526000427`
 - this code repository (persistent URL): `https://github.com/thomasschmitt1993/LLM-DES-Modeling`
 
 Machine-readable citation metadata is provided in `CITATION.cff`.
